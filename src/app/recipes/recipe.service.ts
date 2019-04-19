@@ -10,12 +10,23 @@ export class RecipeService {
             'Meat tastes good',
             'https://www.nps.gov/subjects/camping/images/recipe_1.jpg?maxwidth=1200&maxheight=1200&autorotate=false',
             [
-                new Ingredient('Meat',1),
-                new Ingredient('Vegetables',3)
-            ])
+                new Ingredient('Meat', 1),
+                new Ingredient('Vegetables', 3)
+            ]),
+        new Recipe('Chicken',
+        'Chicken taste better',
+        'https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg?cs=srgb&dl=barbecue-bbq-chicken-106343.jpg&fm=jpg',
+        [
+            new Ingredient('chicken', 1)
+        ])
     ];
 
     getRecipes() {
         return this.recipes.slice();
     }
+
+    getRecipe(id: number) {
+        return this.recipes[id];
+    }
+
 }
