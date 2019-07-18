@@ -10,10 +10,14 @@ import { ShoppingListService } from './shopping-list.service';
 export class ShoppingListComponent implements OnInit {
   ingredients: Ingredient[];
 
-  constructor(private slService : ShoppingListService) { }
+  constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
     this.ingredients = this.slService.getIngredients();
+  }
+
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
   }
 
 }
